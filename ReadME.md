@@ -39,7 +39,27 @@ WeatherDataStreaming/
   └── setup_ngrok_kafka.py # Automated Ngrok and Kafka setup
   └── setup_ngrok_kafka.py # Windows automated setup (PowerShell)
 ```
+## 📊 System Architecture
 
+```mermaid
+---
+title: Weather Data Streaming Pipeline
+---
+flowchart TB
+    WEATHER[🌤️ Weather API] --> PRODUCER[🐍 Python Producer]
+    PRODUCER --> KAFKA[⚡ Kafka Cluster]
+    KAFKA --> CONSUMER[🐍 Python Consumer]
+    KAFKA --> NGROK[🔗 Ngrok Tunnel]
+    NGROK --> FABRIC[☁️ Microsoft Fabric<br/>End-to-end analytics platform]
+    
+    classDef source fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+    classDef processing fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000000
+    classDef fabric fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000000
+    
+    class WEATHER source
+    class PRODUCER,KAFKA,CONSUMER,NGROK processing
+    class FABRIC fabric
+```
 ## ⚡ Quick Start
 ### Prerequisites
 - Docker Desktop
