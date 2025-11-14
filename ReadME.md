@@ -28,6 +28,7 @@ Spark Consumer (Fabric) → Delta Lake → Analytics
 ```bash
 WeatherDataStreaming/
 ├── docker-compose.yml # Kafka and Zookeeper setup
+├── Fabric_WeatherStreamingAnalysis.ipynb # Notebook for Streaming Analysis with Spark
 ├── requirements.txt # Python dependencies
 ├── .gitignore # Git ignore rules
 ├── README.md # Project documentation
@@ -37,7 +38,7 @@ WeatherDataStreaming/
 │ └── consumer.py # Kafka consumer for real-time monitoring
 └── scripts/
   └── setup_ngrok_kafka.py # Automated Ngrok and Kafka setup
-  └── setup_ngrok_kafka.py # Windows automated setup (PowerShell)
+  └── setup_ngrok_kafka.ps1 # Windows automated setup (PowerShell)
 ```
 ## 📊 System Architecture
 
